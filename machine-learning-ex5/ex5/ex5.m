@@ -197,6 +197,12 @@ end
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
+fprintf('\nX-Validation against test set\n');
+[error_test, grad] = linearRegCostFunction(X_poly_test, ytest, theta, 0);
+fprintf('Train Error: %f\tVal Error: %f\tTestError: %f\n', error_train(m), error_val(m), error_test);
+fprintf('Lambda: %f', lambda);
+pause;
+
 %% =========== Part 8: Validation for Selecting Lambda =============
 %  You will now implement validationCurve to test various values of
 %  lambda on a validation set. You will then use this to select the
